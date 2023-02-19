@@ -1,6 +1,7 @@
 
-import './App.css';
-import { Chart } from "react-google-charts";
+import React from 'react';
+import style from'./App.css';
+/*import { Chart } from "react-google-charts";
 
 function App() {
   return (
@@ -36,4 +37,80 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
+/*export default class App extends React.Component {
+  static defaultProps = {
+    checked: false,
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: props.checked,
+    };
+  };
+  handleChange = () => {
+  
+    console.log(this.state.checked) //#1 false 
+    this.setState({
+      checked: !this.state.checked, //true
+    });
+    console.log(this.state.checked) //#2 ?
+  };  
+  render() {
+    const { checked } = this.state;
+    return (
+      <div className="React__checkbox">
+        <label>
+          <input 
+            type="checkbox"
+            className="React__checkbox--input"
+            checked={checked}
+            onChange={this.handleChange}
+          />
+          <span 
+            className="React__checkbox--span"
+          />
+        </label>
+      </div>
+    );
+  }
+}
+*/
+
+export default class Transl extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+       clicked: false
+     };
+
+     this.handleClick = this.handleClick.bind(this);
+   }
+
+  handleClick() {
+    this.setState({
+      clicked: true
+    });
+  }
+
+  render () {
+    const {en, tr, ru} = this.props;
+    const { clicked } = this.state;
+    return (
+      <div className={style.card}>
+    <div className={style.wordwrap}>      
+      <div className={style.item} >{en}</div>
+      <div className={style.item}>{tr}</div>
+          {this.state.clicked ? (
+            <div className={style.item} onClick={this.handleClick} >{ru}</div>
+          ) : (
+            
+            <button className={style.button_tr} onClick={this.handleClick} >Перевод</button>
+          )}
+        
+      </div>
+      </div>
+    )
+  }
+}
