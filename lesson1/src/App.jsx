@@ -1,6 +1,22 @@
 
 import React from 'react';
-import style from'./App.css';
+import './index.css';
+import Counter from '../src/Lesson29/Lesson29';
+
+//import Lesson29 from './Lesson29/Lesson29';
+
+
+export default function App() {
+  return (
+    
+  <Counter 
+  />
+
+
+  );
+}
+
+
 /*import { Chart } from "react-google-charts";
 
 function App() {
@@ -36,7 +52,29 @@ function App() {
   </div> 
   );
 }
+class ClassComponent extends React.Component {
+constructor(props) {
+   super(props);
+   this.state = {
+     count: 0     //Изначальное состояние счетчика
+   };
+ }
 
+ componentDidMount() {
+   console.log("Hello"); //Вызовет один раз после монтирорвания компонента
+ }
+
+ render() {
+   return (
+     <div>
+       <p>count: {this.state.count} times</p>
+       <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+         Click
+       </button>
+     </div>
+   );
+ }
+}
 export default App;*/
 /*export default class App extends React.Component {
   static defaultProps = {
@@ -77,7 +115,7 @@ export default App;*/
 }
 */
 
-export default class Transl extends React.Component {
+/*export default class Transl extends React.Component {
 
   constructor(props) {
     super(props);
@@ -113,4 +151,4 @@ export default class Transl extends React.Component {
       </div>
     )
   }
-}
+}*/
